@@ -1,0 +1,9 @@
+[submodule "References/nano-llama31"]
+	path = References/nano-llama31
+	url = https://github.com/karpathy/nano-llama31.git
+[submodule "References/baby-llama2-chinese"]
+	path = References/baby-llama2-chinese
+	url = https://github.com/DLLXW/baby-llama2-chinese.git
+[submodule "Data/TinyStoriesChinese"]
+	path = Data/TinyStoriesChinese
+	url = https://huggingface.co/datasets/adam89/TinyStoriesChinese
