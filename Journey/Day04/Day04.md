@@ -39,7 +39,7 @@ model_config:
 
 # Directory in which to save checkpoints and logs. If running in a Lightning Studio Job, look for it in
 # /teamspace/jobs/<job-name>/share. (type: <class 'Path'>, default: out/pretrain)
-out_dir: /home/puppyapple/Server/BigAI/Chinese_LLM_From_Scratch/Experiments/Output/pretrain/microstories
+out_dir: Chinese_LLM_From_Scratch/Experiments/Output/pretrain/microstories
 
 # The precision to use for pretraining. Possible choices: "bf16-true", "bf16-mixed", "32-true". (type: Optional[str], default: null)
 precision: bf16-mixed

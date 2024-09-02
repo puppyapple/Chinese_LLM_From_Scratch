@@ -25,7 +25,7 @@ model_config:
 
 # Directory in which to save checkpoints and logs. If running in a Lightning Studio Job, look for it in
 # /teamspace/jobs/<job-name>/share. (type: <class 'Path'>, default: out/pretrain)
-out_dir: /home/puppyapple/Server/BigAI/Chinese_LLM_From_Scratch/Experiments/Output/pretrain/microstories
+out_dir: Chinese_LLM_From_Scratch/Experiments/Output/pretrain/microstories
 
 # The precision to use for pretraining. Possible choices: "bf16-true", "bf16-mixed", "32-true". (type: Optional[str], default: null)
 precision: bf16-mixed
@@ -38,14 +38,14 @@ initial_checkpoint_dir:
 # from the latest checkpoint in ``out_dir``. An error will be raised if no checkpoint is found. Passing
 # ``'auto'`` will resume from the latest checkpoint but not error if no checkpoint exists.
 # (type: Union[bool, Literal["auto"], Path], default: False)
-resume: False
+resume: True
 
 # Data-related arguments. If not provided, the default is ``litgpt.data.TinyLlama``.
 data:
   # TinyStories
   class_path: litgpt.data.LitData
   init_args:
-    data_path: /home/puppyapple/Server/BigAI/Chinese_LLM_From_Scratch/Data/TinyStoriesChinese/processed_data
+    data_path: Chinese_LLM_From_Scratch/Data/TinyStoriesChinese/processed_data
     split_names:
       - train
       - val
@@ -129,7 +129,7 @@ num_nodes: 1
 
 # Optional path to the tokenizer dir that was used for preprocessing the dataset. Only some data
 # module require this. (type: Optional[Path], default: null)
-tokenizer_dir: /home/puppyapple/Server/BigAI/Chinese_LLM_From_Scratch/References/chatglm3-6b
+tokenizer_dir: Chinese_LLM_From_Scratch/References/chatglm3-6b
 
 # The name of the logger to send metrics to. (type: Literal['wandb', 'tensorboard', 'csv'], default: tensorboard)
 logger_name: wandb
