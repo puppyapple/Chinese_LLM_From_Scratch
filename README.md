@@ -18,6 +18,15 @@
 
 ## 最近更新
 <details>
+  <summary>2024-09-12</summary>
+  上传了`Day07`-`Day09`的预训练代码（`Jupyter Notebook`）：
+
+- `Day07`: `SFT`数据构建
+- `Day08`: `SFT`训练相关知识点调研
+- `Day09`: `SFT`训练及效果测试
+</details>
+
+<details>
   <summary>2024-09-02</summary>
   上传了`Day01`-`Day05`的预训练代码（`Jupyter Notebook`）：
 
@@ -31,7 +40,7 @@
 ## 计划执行
 在一个垂直领域的小数据集上完成：
 - [x] 一个小尺寸模型的预训练（能在单卡上跑）
-- [ ] 在上面的基础上完成指令微调
+- [x] 在上面的基础上完成指令微调
 - [ ] 在上面的基础上完成`DPO`
 - [ ] 其他待定
 
@@ -53,11 +62,12 @@ GPU: NVIDIA 09:00.0 NVIDIA Corporati
 Memory: 9347MiB / 64195MiB
 ```
 ### 预训练
-详细参数请参考 [microstories.yaml](./Experiments/configs/microstories.yaml)。
+详细参数请参考 [pretrain.yaml](./Experiments/configs/microstories/pretrain.yaml)。
 ![](https://erxuanyi-1257355350.cos.ap-beijing.myqcloud.com/image.png)
 
 ### 指令微调
-待更新...
+详细参数请参考 [sft.yaml](./Experiments/configs/microstories/sft.yaml)。
+![image_v2](https://erxuanyi-1257355350.cos.ap-beijing.myqcloud.com/image_v2.png)
 
 ### DPO
 待更新...
