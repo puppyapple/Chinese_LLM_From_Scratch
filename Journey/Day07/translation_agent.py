@@ -1,4 +1,3 @@
-import aiohttp
 import asyncio
 from typing import List, Union
 from openai import AsyncAzureOpenAI

@@ -8,8 +8,20 @@
 
 
 ```python
-! head -10 ../../Data/TinyStoriesInstruct/TinyStories-Instruct-valid.txt
+! head -10 ../../Data/TinyStoriesInstruct/TinyStories-Instruct-train.txt
 ```
+
+    Features: Dialogue
+    Words: quit, oak, gloomy
+    Summary: Sara and Ben were playing in the park, but Sara wanted to go home because it was cold and dark. Ben convinced her to stay and play, but eventually agreed to go home and have hot cocoa.
+    Story: 
+    
+    Sara and Ben were playing in the park. They liked to climb the big oak tree and pretend they were birds. They made nests with leaves and twigs and sang songs.
+    But today, the sky was gloomy and the wind was cold. Sara felt sad and cold. She wanted to go home and have some hot cocoa.
+    "Ben, I want to quit," she said. "It's too cold and dark. Let's go home."
+    Ben looked at Sara and frowned. He liked the oak tree and the park. He wanted to stay and play.
+    "No, Sara, don't quit," he said. "It's fun here. Look, there's a squirrel. Let's chase it."
+
 
 这些指令有四种类型：
 1. 一个单词列表，包含在故事中。
@@ -21,9 +33,9 @@
 - 数据集是英文的，我需要想办法给整成中文的。
 - 数据集的形式和主流的SFT数据集不太一样，需要做一些适配。
 
-> 个人理解这里是因为这里的指令相对单一（生成故事），只是约束有一些区别，所以作者采取了简单的拼接方式。
->
-> 这里出于学习的目的还是往主流的SFT数据集上靠拢。
+  > 个人理解这里是因为这里的指令相对单一（生成故事），只是约束有一些区别，所以作者采取了简单的拼接方式。
+  >
+  > 这里出于学习的目的还是往主流的SFT数据集上靠拢。
 
 ### 吴恩达老师的翻译Agent测试
 
@@ -66,28 +78,26 @@ result = await translate(
 )
 print(result)
 ```
-```
-ic| num_tokens_in_text: 416
-ic| 'Translating text as a single chunk'
+
+    ic| num_tokens_in_text: 416
+    ic| 'Translating text as a single chunk'
 
 
-随机句子：他们非常兴奋，也想飞起来。  
-特点：对话  
-摘要：汤姆和安娜很兴奋要和父母一起度假，他们乘坐一架大飞机飞往阳光明媚、沙滩众多的地方。  
-故事：  
-汤姆和安娜是兄妹。他们喜欢玩玩具和读书。他们非常高兴，因为他们要和妈妈爸爸一起去度假。他们将乘坐一架大飞机去一个阳光明媚、沙滩众多的地方。  
-度假日终于到了，他们收拾好行李。他们去机场，等待他们的飞机。他们看到许多飞机在天空中飞。他们非常兴奋，也想飞起来。  
-“看，安娜，那架飞机真大又快！”汤姆说。  
-“是的，汤姆，它有翅膀和尾巴。我想知道它要去哪里，”安娜说。  
-他们听到妈妈叫他们。“快来，孩子们，是时候登机了。我们得出示机票，通过登机口。”  
-他们跟着妈妈和爸爸上了飞机。他们找到座位，系好安全带。他们望向窗外，看到地面、汽车和行人。他们听到飞行员在扬声器上说话。  
-“大家好，我是你们的机长。欢迎乘坐123航班前往阳光海滩。我们准备起飞。请坐好，祝大家旅途愉快。”  
-飞机开始移动，发出轰鸣声。汤姆和安娜感到飞机越来越快。他们看到地面变得越来越小。他们看到云朵越来越近。他们飞起来了！  
-“哇，安娜，我们飞起来了！我们在天空中！”汤姆说。  
-“我知道，汤姆，真是太神奇了！我们这么高！看，那是太阳！”安娜说。  
-他们微笑、欢笑，拍着手。他们一点都不难过。他们非常快乐。他们正在飞往度假地。
-```
-
+    随机句子：他们非常兴奋，也想飞。  
+    特点：对话  
+    摘要：汤姆和安娜兴奋地和父母一起去度假，他们乘坐一架大飞机飞往阳光明媚、沙滩细腻的地方。  
+    故事：  
+    汤姆和安娜是兄妹。他们喜欢玩玩具和读书。他们非常开心，因为他们要和爸爸妈妈一起去度假。他们将乘坐一架大飞机去一个阳光明媚、沙滩细腻的地方。  
+    度假的日子到了，他们开始整理行李。他们去机场，等待他们的飞机。他们看到许多其他飞机在天空中飞。他们非常兴奋，也想飞。  
+    “看，安娜，那架飞机又大又快！”汤姆说。  
+    “是的，汤姆，它有翅膀和尾巴。我想知道它要去哪里，”安娜说。  
+    他们听到妈妈叫他们。“快点，孩子们，差不多该登机了。我们必须出示机票，然后通过登机口。”  
+    他们跟着爸爸妈妈上了飞机。他们找到自己的座位，系好安全带。他们望向窗外，看到地面、汽车和人。他们听到飞行员在扬声器上说话。  
+    “大家好，我是你们的机长。欢迎乘坐123航班前往阳光海滩。我们准备起飞。请坐好，享受旅程。”  
+    飞机开始移动，发出轰鸣的声音。汤姆和安娜感觉飞机越来越快。他们看到地面变得越来越小。云朵越来越近。他们在飞！  
+    “哇，安娜，我们在飞！我们在天空中！”汤姆说。  
+    “我知道，汤姆，太神奇了！我们这么高！看，那里是太阳！”安娜说。  
+    他们微笑、欢笑，拍手欢呼。他们一点都不难过。他们非常快乐。他们正在飞往度假的地方。
 
 
 ### 数据采样
@@ -98,9 +108,8 @@ ic| 'Translating text as a single chunk'
 ```python
 ! grep -o "endoftext" ../../Data/TinyStoriesInstruct/TinyStories-Instruct-train.txt  | wc -l 
 ```
-```
-2476532
-```
+
+    2476532
 
 
 接近250w的量级有点大（因为微软的论文里是直接在整个数据集上做的`pretrain`的）。
@@ -192,18 +201,16 @@ def get_fields(block):
 ```python
 import pickle
 
-sft_raw = sample_data(
-    "../../Data/TinyStoriesInstruct/TinyStories-Instruct-train.txt", 15000
-)
+# sft_raw = sample_data(
+#     "../../Data/TinyStoriesInstruct/TinyStories-Instruct-train.txt", 15000
+# )
+sft_raw = pickle.load(open("sft_raw.pkl", "rb"))
 print(f"采样数据总数: {len(sft_raw)}")
 
-pickle.dump(sft_raw, open("sft_raw.pkl", "wb"))
+# pickle.dump(sft_raw, open("sft_raw.pkl", "wb"))
 ```
 
-```
-采样数据总数: 15001
-```
-
+    采样数据总数: 15001
 
 
 ### 批量翻译
@@ -272,20 +279,20 @@ translated_data = await batch_translate(sft_raw, cache_file, max_workers=100)
 
 翻译完成了，最后一步就是将数据整理成`SFT`数据集的格式。
 
+（这里还发现了个小问题，翻译统一将**总结**字段放到了最后，导致顺序出现了问题，所以这里需要先处理一下。）
+
 
 ```python
+import itertools
+import json
+import random
 from collections import Counter
 from pprint import pprint
 
-instruction_template = """按照给定的要求讲故事，
-其中‘摘要’表示故事的总结，
-‘单词/词汇/关键词’表示故事中必须包含的单词，
-‘随机句子’表示故事中必须包含的句子，
-‘特征/特点’表示故事的特征，如对话、坏结局、道德价值、情节转折、伏笔、冲突等。
-"""
+instruction_template = "按照下面输入的约束生成故事"
 
 
-def process_translated_data(input_file, output_file):
+def process_translated_data(input_file):
     with open(input_file, "r", encoding="utf-8") as f:
         data = json.load(f)
 
@@ -310,76 +317,204 @@ def process_translated_data(input_file, output_file):
 
             processed_item = {
                 "instruction": instruction_template,
-                "input": input_text,
+                "input": f"{input_text}",
                 "output": output_text,
             }
 
             processed_data.append(processed_item)
+    # 根据constraint_keys的频率排序，选取出现频率大于10的关键字
+    constraint_keys = {k: v for k, v in constraint_keys.items() if v > 10}
+    return constraint_keys, processed_data
+```
 
-    # 将处理后的数据写入输出文件
+
+```python
+constraint_keys, processed_data = process_translated_data("translation_cache.json")
+```
+
+
+```python
+keywords_normalization = {
+    "词汇": "词汇",
+    "关键词": "词汇",
+    "单词": "词汇",
+    "词语": "词汇",
+    "词": "词汇",
+    "字": "词汇",
+    "特征": "特征",
+    "特点": "特征",
+    "故事特点": "特征",
+    "故事特征": "特征",
+    "对话特点": "特征",
+    "主题": "特征",
+    "随机句子": "随机句子",
+    "随便一句话": "随机句子",
+    "随机一句话": "随机句子",
+    "随机句": "随机句子",
+    "随机的一句话": "随机句子",
+    "随机的句子": "随机句子",
+    "随机句子是": "随机句子",
+    "随便说一句": "随机句子",
+    "随便一句": "随机句子",
+    "随机句子示例": "随机句子",
+    "摘要": "摘要",
+    "总结": "摘要",
+    "故事概要": "摘要",
+}
+```
+
+
+```python
+def split_data(data, keys):
+    result = []
+    current_key = None
+    current_content = ""
+
+    for line in data.split("\n"):
+        line = line.strip()
+        if any(key in line for key in keys):
+            if current_key:
+                result.append((current_key, current_content.strip()))
+            for key in keys:
+                if key in line:
+                    current_key, current_content = line.split(key, 1)
+                    current_key = key.strip()
+                    current_content = current_content.strip().lstrip("：").strip()
+                    break
+        else:
+            current_content += " " + line
+
+    if current_key:
+        result.append((current_key, current_content.strip()))
+
+    return result
+
+
+def filter_and_normalize(
+    processed_data, constraint_keys, output_file, expand_data=True
+):
+    final_data = []
+    for item in processed_data:
+        input_text = item["input"]
+        output_text = item["output"]
+        has_keyword = False
+        for keyword in keywords_normalization:
+            if f"{keyword}：" in output_text:
+                content = output_text.split(f"{keyword}：")[1].strip()
+                input_text += f"\n{keyword}：{content}"
+                output_text = output_text.split(f"{keyword}：")[0].strip()
+                has_keyword = True
+            if f"{keyword}：" in input_text:
+                input_text = input_text.replace(
+                    f"{keyword}：", f"{keywords_normalization[keyword]}："
+                )
+                has_keyword = True
+        if not has_keyword:
+            continue
+
+        # 数据增强
+        if expand_data:
+            input_tuple_list = split_data(input_text, keywords_normalization)
+            if not input_tuple_list:
+                continue
+
+            for permutation in itertools.permutations(input_tuple_list):
+                new_item = {
+                    "instruction": instruction_template,
+                    "input": "\n".join(
+                        [f"{key}：{value}" for key, value in permutation]
+                    ),
+                    "output": output_text,
+                }
+                final_data.append(new_item)
+        else:
+            item.update({"input": input_text, "output": output_text})
+            final_data.append(item)
+
+    # 对结果做一个打乱
+    random.shuffle(final_data)
     with open(output_file, "w", encoding="utf-8") as f:
-        json.dump(processed_data, f, ensure_ascii=False, indent=2)
+        json.dump(final_data, f, ensure_ascii=False, indent=2)
 
-    return processed_data, constraint_keys
+    return final_data
+```
 
 
-processed_data, constraint_keys = process_translated_data(
-    "translation_cache.json", "../../Data/TinyStoriesInstruct/sft_data.json"
+```python
+final_data = filter_and_normalize(
+    processed_data,
+    keywords_normalization,
+    "../../Data/TinyStoriesInstruct/sft_data_v2.json",
+    True,
 )
-
-pprint(constraint_keys.most_common(20))
 ```
-```
-('摘要', 8433),
-('随机句子', 5372),
-('词汇', 4824),
-('特点', 4603),
-('特征', 1269),
-('单词', 1073),
-('总结', 1001),
-('关键词', 349),
-('随机的句子', 246),
-('随机句', 196),
-('故事特点', 146),
-('主题', 122),
-('词语', 108),
-('随便一句话', 95),
-('随机一句话', 87),
-('随机的一句话', 24),
-('词', 21),
-('故事特征', 20),
-('随机句子是', 19),
-('随便说一句', 17)]
-```
-
-
 
 看一看处理的结果，这样就和经典的`SFT`数据格式一致了。
 
 
 ```python
-pprint(processed_data[0])
+for i in range(5):
+    pprint(final_data[i])
 ```
 
-```
-{
-    'input': '特点：对话  \n'
-              '摘要：蒂米和妈妈一起去商店，对商店里所有的玩具和糖果感到惊讶。他请求触摸一个玩具，妈妈允许他，这让他非常开心。  \n'
-              '词汇：触摸、商店、宽敞',
-    'instruction': '按照给定的要求讲故事，\n'
-                   '其中‘摘要’表示故事的总结，\n'
-                   '‘单词/词汇/关键词’表示故事中必须包含的单词，\n'
-                   '‘随机句子’表示故事中必须包含的句子，\n'
-                   '‘特征/特点’表示故事的特征，如对话、坏结局、道德价值、情节转折、伏笔、冲突等。\n',
-    'output': '很久以前，有一个小男孩名叫蒂米。蒂米喜欢在外面玩耍和探索。  \n'
-              '一天，蒂米和妈妈一起去商店。商店非常大，宽敞。蒂米对他看到的玩具和糖果真是太多了，感到惊讶。  \n'
-              '突然，蒂米看到一个他非常想触摸的玩具。“妈妈，我可以触摸那个玩具吗？”他问。  \n'
-              '“当然可以啊，蒂米，”妈妈说。蒂米非常开心，他轻轻摸了摸玩具。摸起来软软的，特别有弹性。  \n'
-              '离开商店后，蒂米对妈妈说他有多喜欢和她一起逛商店。“我玩得可开心了，摸玩具真有意思，”他说。妈妈微笑着把他抱住了。'}
-```
+    {'input': '随机句子：随机句子：蒂姆的网球水平越来越好，但有时他在错过球的时候会感到不耐烦。\n'
+              '特征：对话\n'
+              '摘要：蒂姆和他的爸爸一起打网球，但当蒂姆错过球时会感到不耐烦。他的爸爸鼓励他坚持练习，最终蒂姆成功把球打过了网，并为自己感到骄傲。',
+     'instruction': '按照下面输入的约束生成故事',
+     'output': '从前，有个叫蒂姆的小男孩。蒂姆喜欢和他的爸爸打网球。他们会去公园，来回击球。蒂姆的网球水平越来越好，但有时他在错过球的时候会感到不耐烦。  \n'
+               '一天，蒂姆和他的爸爸在打网球，蒂姆错过了很多次球。他变得很不耐烦，甚至哭了起来。他的爸爸说：“别担心，蒂姆。你通过练习会变得更好的。”  \n'
+               '爸爸给蒂姆发了个球，蒂姆把球打过了网。他高兴得不得了！蒂姆说：“我成功了，爸爸！”  \n'
+               '他的爸爸微笑着说：“没错，你成功了！现在我们继续玩，享受其中的乐趣。”蒂姆感到非常自豪，一直打球，直到该回家的时候。'}
+    {'input': '词汇：撒谎，打架，大\n'
+              '摘要：艾莉这只大象帮助朋友们蒂米和萨米和解，强调了友谊和一起玩的重要性。\n'
+              '随机句子：艾莉和她的朋友们住在一片大丛林里。\n'
+              '特征：对话',
+     'instruction': '按照下面输入的约束生成故事',
+     'output': '从前，有一只叫艾莉的大象。艾莉和她的朋友们住在一片大丛林里。一天，艾莉看到她的朋友老虎蒂米躺在地上。  \n'
+               '艾莉问：“蒂米，你怎么躺着？”  \n'
+               '“我和蛇萨米打架，”蒂米悲伤地回答。  \n'
+               '艾莉看到朋友们打架，心里很难过。她说：“打架可不好，我们应该做朋友，一起玩。”  \n'
+               '蒂米同意了艾莉，他们一起去找萨米。当他们找到萨米时，他们互相道歉，重新成为了好朋友。从那天起，他们都一起玩，在丛林里玩得很开心。'}
+    {'input': '词汇：滚，比萨，打开\n'
+              '摘要：蒂姆试图从一家开着的比萨店拿一块大比萨，但它太大了，所以他决定把它滚走。一只狗看到了比萨，追着蒂姆，吃掉了比萨，留下蒂姆感到伤心。',
+     'instruction': '按照下面输入的约束生成故事',
+     'output': '一天，一个名叫蒂姆的男孩去了比萨店。他特别喜欢比萨。在比萨店里，他看到桌子上有一个大比萨。它看起来很好吃！  \n'
+               '蒂姆说：“哇，我想吃那块比萨！”他试图拿起比萨，但它太大了。所以，他决定把比萨滚走。他把比萨滚出了比萨店。  \n'
+               '当蒂姆把比萨滚下街的时候，一只大狗看到了比萨。那只狗很饿。狗说：“我也想吃那块比萨！”狗开始追着蒂姆和他的比萨。  \n'
+               '蒂姆跑得很快，但狗跑得更快。狗追上了蒂姆和他的比萨。狗吃掉了整块比萨，蒂姆感到伤心。那天他一口比萨都没吃到。'}
+    {'input': '词汇：鼓掌，海洋，危险\n'
+              '特征：对话\n'
+              '摘要：莉莉和萨姆想在海洋中游泳，但他们的父母说太危险了。他们在岸边和新朋友一起玩球和放风筝，玩得很开心。他们在水中看到一只海豚，了解到海洋既美妙又危险。',
+     'instruction': '按照下面输入的约束生成故事',
+     'output': '莉莉和萨姆和他们的爸爸妈妈在海滩上。他们喜欢在沙子里玩耍，欣赏海洋。海洋又大又蓝，发出隆隆的声音。  \n'
+               '“妈妈，我们可以下水吗？”莉莉问。  \n'
+               '“不行，亲爱的，今天水太危险了。有大浪和强流。你们可能会受伤或者迷路，”妈妈说。  \n'
+               '“但是我想游泳，妈妈。我游得很好。你教过我怎么游泳，记得吗？”萨姆说。  \n'
+               '“我知道，亲爱的，但在海洋里游泳和在游泳池里游泳是不同的。海洋对你们这种小孩来说不安全。你们必须听爸爸妈妈的话，待在岸边，好吗？”爸爸说。  \n'
+               '莉莉和萨姆感到难过。他们想在水里玩得开心。他们看到其他小朋友在玩球和放风筝。他们决定加入他们，交一些新朋友。  \n'
+               '他们玩球和放风筝玩得特别开心。他们互相扔球，追着风筝跑。他们欢笑、喊叫、欢呼。他们忘记了水，享受着阳光和微风。  \n'
+               '不久，到了回家的时间。爸爸妈妈收拾好东西，叫莉莉和萨姆。他们和新朋友道别，感谢他们一起玩。  \n'
+               '当他们走向车时，他们看到码头上有一群人。他们在看水里的东西。他们听到了一些鼓掌和欢呼声。  \n'
+               '“他们在看什么，爸爸？”莉莉问。  \n'
+               '“我们去看看，亲爱的，”爸爸说。  \n'
+               '他们走到码头，看到一条大鱼从水里跳出来。它是灰色的，闪闪发亮，鼻子还很长。它是一只海豚。它在波浪中玩耍和跳舞。它发出一些有趣的声音，溅起水花。  \n'
+               '“哇，看看那个，萨姆。是一只海豚。太酷了，”莉莉说。  \n'
+               '“太神奇了，莉莉。它聪明又友好。它不像水那样危险。真不错，”萨姆说。  \n'
+               '他们看了一会儿海豚。每次海豚跳跃、旋转或挥手时，他们都鼓掌欢呼。他们微笑着挥手回应。他们感到快乐和兴奋。  \n'
+               '他们那天学到了很多新东西。他们明白了海洋不仅危险，还有很多美妙的地方。他们学到在海滩上有很多东西可以看、可以做和可以享受。他们学到可以在不下水的情况下玩得开心。他们学到可以交新朋友，看到新动物。他们学到可以为海豚鼓掌。'}
+    {'input': '特征：对话，道德价值\n'
+              '随机句子：一天，班尼看到地上有一把梳子。\n'
+              '摘要：兔子班尼在意外拿走了一把属于小女孩的梳子，并后来遇到一只死鸟后，明白了诚实和尊重生命的重要性。',
+     'instruction': '按照下面输入的约束生成故事',
+     'output': '从前，有一只叫班尼的兔子。班尼喜欢整天跳跃和玩耍。一天，班尼看到地上有一把梳子。他觉得挺有意思的，决定捡起来。  \n'
+               '当班尼在梳理自己的毛发时，他听到一个声音说：“嘿，兔子！那把梳子是我的！”这是一个小女孩，她掉了梳子。班尼因为没有询问就拿走了梳子而感到很不好意思，迅速把梳子还给了她。  \n'
+               '小女孩很高兴，谢班尼的诚实。她告诉他，在拿东西之前一定要先问是很重要的。班尼为自己做对了事情而感到自豪，高高兴兴地跳开了。  \n'
+               '当他跳来跳去时，班尼看到地上有一只死鸟。他想起了小女孩的话，知道尊重生命是很重要的，即使它们已经不再活着。班尼为那只鸟默哀，继续他的路程，心里感激自己学到的教训。'}
 
 
 ## 小结
 1. 基于`TinyStories`的`Instruct`数据进行指令组合层面均衡的采样，获得了15000条原始数据
 2. 构造了翻译函数，异步使用吴恩达老师的`translation-agent`对数据进行翻译
 3. 基于翻译后的数据，构造了经典格式的`SFT`数据集
+
+
