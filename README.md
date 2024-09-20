@@ -18,6 +18,14 @@
 
 ## 最近更新
 <details>
+  <summary>2024-09-20</summary>
+  上传了`Day10`-`Day11`的内容:
+
+- `Day10`: 中秋特刊，自己关于大模型的一些思考
+- `Day11`: `DPO`数据构建
+</details>
+
+<details>
   <summary>2024-09-12</summary>
   上传了`Day07`-`Day09`的预训练代码（`Jupyter Notebook`）：
 
