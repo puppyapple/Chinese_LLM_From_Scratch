@@ -65,6 +65,7 @@ async def main(concurrency, test_mode):
     try:
         with open("dpo_cache.json", "r", encoding="utf-8") as f:
             cache = json.load(f)
+            logger.info(f"加载缓存: {len(cache)}条")
     except FileNotFoundError:
         cache = {}
 
