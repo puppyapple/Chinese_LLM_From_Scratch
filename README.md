@@ -86,7 +86,9 @@ Memory: 9347MiB / 64195MiB
 ![image_v2](https://erxuanyi-1257355350.cos.ap-beijing.myqcloud.com/image_v2.png)
 
 ### DPO
-待更新...
+训练脚本参考[dpo_train.py](./Journey/Day13/dpo_train.py)
+![](https://erxuanyi-1257355350.cos.ap-beijing.myqcloud.com/image.png)
+
 
 ## 目录结构
 
