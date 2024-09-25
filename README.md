@@ -79,7 +79,7 @@ Memory: 9347MiB / 64195MiB
 ```
 ### 预训练
 详细参数请参考 [pretrain.yaml](./Experiments/configs/microstories/pretrain.yaml)。
-![](https://erxuanyi-1257355350.cos.ap-beijing.myqcloud.com/image.png)
+![pretrain_wandb](https://erxuanyi-1257355350.cos.ap-beijing.myqcloud.com/pretrain_wandb.png)
 
 ### 指令微调
 详细参数请参考 [sft.yaml](./Experiments/configs/microstories/sft.yaml)。
@@ -87,7 +87,7 @@ Memory: 9347MiB / 64195MiB
 
 ### DPO
 训练脚本参考[dpo_train.py](./Journey/Day13/dpo_train.py)
-![](https://erxuanyi-1257355350.cos.ap-beijing.myqcloud.com/image.png)
+![](https://erxuanyi-1257355350.cos.ap-beijing.myqcloud.com/dpo_train.png)
 
 
 ## 目录结构

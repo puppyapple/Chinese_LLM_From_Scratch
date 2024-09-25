@@ -222,7 +222,7 @@ litgpt pretrain --config Experiments/configs/microstories.yaml
 
 我的模型其实已经训练了一段时间，show一下训练过程中的图表：
 
-![wandb](https://erxuanyi-1257355350.cos.ap-beijing.myqcloud.com/image.png)
+![pretrain_wandb](https://erxuanyi-1257355350.cos.ap-beijing.myqcloud.com/pretrain_wandb.png)
 
 ## 小结
 1. 详细介绍了`litgpt`的预训练模型配置文件。

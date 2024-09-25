@@ -107,7 +107,7 @@ if __name__ == "__main__":
 
 训练过程中的指标波动比较大，简单贴个图：
 
-![](https://erxuanyi-1257355350.cos.ap-beijing.myqcloud.com/image.png)
+![](https://erxuanyi-1257355350.cos.ap-beijing.myqcloud.com/dpo_train.png)
 
 `DPO`的原理细节这里就不展开了，大家可以自行参考论文和开源的代码实现。
 
