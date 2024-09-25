@@ -19,7 +19,7 @@
 ## 最近更新
 <details>
   <summary>2024-09-25</summary>
-  上传了`Day12` - `Day13`的内容:
+  上传了Day12 - Day13的内容:
 
 - `Day12`: `litgpt`模型转换到`huggingface`格式
 - `Day13`: `DPO`训练
@@ -27,7 +27,7 @@
 
 <details>
   <summary>2024-09-20</summary>
-  上传了`Day10`-`Day11`的内容:
+  上传了Day10 - Day11的内容:
 
 - `Day10`: 中秋特刊，自己关于大模型的一些思考
 - `Day11`: `DPO`数据构建
@@ -35,7 +35,7 @@
 
 <details>
   <summary>2024-09-12</summary>
-  上传了`Day07`-`Day09`的预训练代码（`Jupyter Notebook`）：
+  上传了Day07 - Day09的内容:
 
 - `Day07`: `SFT`数据构建
 - `Day08`: `SFT`训练相关知识点调研
@@ -44,7 +44,7 @@
 
 <details>
   <summary>2024-09-02</summary>
-  上传了`Day01`-`Day05`的预训练代码（`Jupyter Notebook`）：
+  上传了Day01 - Day05的内容:
 
 - `Day01`: 项目调研
 - `Day02`: `Tokenizer`分词
@@ -57,7 +57,7 @@
 在一个垂直领域的小数据集上完成：
 - [x] 一个小尺寸模型的预训练（能在单卡上跑）
 - [x] 在上面的基础上完成指令微调
-- [ ] 在上面的基础上完成`DPO`
+- [x] 在上面的基础上完成`DPO`
 - [ ] 其他待定
 
 **Journey**文件夹下有每次任务的详细记录。
