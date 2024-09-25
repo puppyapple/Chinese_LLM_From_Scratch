@@ -18,6 +18,14 @@
 
 ## 最近更新
 <details>
+  <summary>2024-09-25</summary>
+  上传了`Day12` - `Day13`的内容:
+
+- `Day12`: `litgpt`模型转换到`huggingface`格式
+- `Day13`: `DPO`训练
+</details>
+
+<details>
   <summary>2024-09-20</summary>
   上传了`Day10`-`Day11`的内容:
 
